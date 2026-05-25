@@ -4,11 +4,13 @@ API para controle de chamados internos entre setores, desenvolvida com Node.js e
 
 O projeto simula um fluxo simples de abertura, listagem, filtro e atualização de chamados, com uma interface web para testar o consumo da API.
 
+## Demonstração
+
+![Tela principal da API](docs/api-dashboard.png)
+
 ## Objetivo
 
 O objetivo do projeto é representar um cenário comum em sistemas internos: registrar demandas entre setores, acompanhar prioridades e atualizar o status de cada chamado.
-
-A aplicação foi construída com foco em organização de código, regras simples de negócio, validação de dados e integração entre front-end e back-end.
 
 ## Tecnologias utilizadas
 
