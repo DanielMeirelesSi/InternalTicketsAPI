@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InternalTicketsAPI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+  <div>
+    <h1>Painel de Controle da API</h1>
+    <p>Interface de teste</p>
+  </div>
+
+  <div class="api-status">
+    <span class="status-dot"></span>
+    Online
+  </div>
+</header>
+
+  <main class="container">
+    <section class="summary-grid">
+      <article class="summary-card"><span>Total</span><strong id="totalTickets">0</strong></article>
+      <article class="summary-card"><span>Abertos</span><strong id="openTickets">0</strong></article>
+      <article class="summary-card"><span>Em andamento</span><strong id="progressTickets">0</strong></article>
+      <article class="summary-card"><span>Resolvidos</span><strong id="resolvedTickets">0</strong></article>
+    </section>
+
+    <section class="content-grid">
+      <form id="ticketForm" class="panel">
+        <div class="panel-header">
+          <h2>Novo chamado</h2>
+          <p>Cadastre uma solicitação interna.</p>
+        </div>
+
+        <label for="titulo">Título</label>
+        <input type="text" id="titulo" placeholder="Ex: Erro no relatório diário" required>
+
+        <label for="descricao">Descrição</label>
+        <textarea id="descricao" rows="4" placeholder="Descreva o problema ou solicitação" required></textarea>
+
+        <div class="form-row">
+          <div>
+            <label for="setor">Setor</label>
+            <input type="text" id="setor" placeholder="Ex: Operação" required>
+          </div>
+          <div>
+            <label for="prioridade">Prioridade</label>
+            <select id="prioridade" required>
+              <option value="Baixa">Baixa</option>
+              <option value="Media">Média</option>
+              <option value="Alta">Alta</option>
+              <option value="Critica">Crítica</option>
+            </select>
+          </div>
+        </div>
+
+        <label for="responsavel">Responsável</label>
+        <input type="text" id="responsavel" placeholder="Ex: TI">
+
+        <button type="submit">Abrir chamado</button>
+        <span id="formMessage" class="form-message"></span>
+      </form>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Chamados</h2>
+          <p>Filtre, acompanhe e atualize o status.</p>
+        </div>
+
+        <div class="filters">
+          <select id="statusFilter">
+            <option value="">Todos os status</option>
+            <option value="Aberto">Aberto</option>
+            <option value="Em andamento">Em andamento</option>
+            <option value="Resolvido">Resolvido</option>
+            <option value="Cancelado">Cancelado</option>
+          </select>
+          <select id="priorityFilter">
+            <option value="">Todas as prioridades</option>
+            <option value="Baixa">Baixa</option>
+            <option value="Media">Média</option>
+            <option value="Alta">Alta</option>
+            <option value="Critica">Crítica</option>
+          </select>
+          <input type="text" id="sectorFilter" placeholder="Filtrar por setor">
+        </div>
+
+        <div id="ticketsList" class="tickets-list"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
